@@ -1,0 +1,37 @@
+.PHONY: all copy make move clean run
+CC = gcc
+OUT_FLAG = -o
+CFLAGS = -Wall -Wextra -Werror -pedantic
+MAIN_DEF = main.c
+# change here
+NAME_NUM = 0-
+NAME_of_file = binary_tree_node.c
+OUTPUT_NAME = 0-n
+# --------------------------------
+NAME = $(NAME_NUM)$(NAME_of_file)
+main_name = $(NAME_NUM)$(MAIN_DEF)
+# ----------------------------------
+
+NEED = binary_tree_print.c $(main_name) $(NAME)
+
+#functions here
+all:  copy make move clean run
+
+# copying the main from folder mains
+copy:
+	cp mains/$(main_name) .
+
+# making the file
+make: $(NEED)
+	$(CC) $(CFLAGS) $(NEED) $(OUT_FLAG) $(OUTPUT_NAME)
+
+# moving the output file to folder OUT
+move:
+	mv $(OUTPUT_NAME) OUT/
+
+# deleting the main folder
+clean:
+	rm -rf $(main_name)
+# running the out put
+run:
+	./OUT/$(OUTPUT_NAME)
