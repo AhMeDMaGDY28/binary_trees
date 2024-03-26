@@ -1,4 +1,4 @@
-.PHONY: all copy make move clean run clean2
+.PHONY: all copy make move clean run ram_checker clean2 betty
 # this is a make file for 0x1D. C - Binary trees
 # dont touch this
 CC = gcc
@@ -14,10 +14,11 @@ MAIN_FOLDER_NAME = MAIN_LOCATION
 OUTPUT_FOLDER_NAME = OUTPUT
 
 # change here
-NAME_NUM = 1
-NAME_of_file = 1-binary_tree_insert_left.c
-OUTPUT_NAME = test
-
+NAME_NUM = 3
+NAME_of_file = 3-binary_tree_delete.c
+OUTPUT_NAME = 3-del
+# if there is more files for the compiler
+EXTRA = 0-binary_tree_node.c 2-binary_tree_insert_right.c 
 # --------------------------------
 
 MAIN_FOLDER = $(MAIN_FOLDER_NAME)/
@@ -31,12 +32,12 @@ PRINT_READY = $(MAIN_FOLDER)$(PRINT_TREE)
 run_place = $(OUTPUT_FOLDER)$(OUTPUT_NAME)
 OUTPUT_NAME_FLAG = $(OUT_FLAG) $(OUTPUT_NAME)
 # ----------------------------------
-EXTRA = 0-binary_tree_node.c
+
 # some times this need to change
 NEED = $(PRINT_TREE) $(main_name) $(EXTRA) $(NAME)
 
 #functions here
-all:  copy make move clean run clean2
+all:  copy make move clean run ram_checker clean2 betty
 
 make_folders:
 	@mkdir -p $(MAIN_FOLDER_NAME)
@@ -61,5 +62,10 @@ clean:
 run:
 	@./$(run_place)
 
+ram_checker:
+	valgrind ./$(run_place)
 clean2:
 	@rm -rf $(run_place)
+
+betty:
+	@betty $(NAME_of_file)
