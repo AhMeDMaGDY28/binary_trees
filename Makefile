@@ -14,9 +14,9 @@ MAIN_FOLDER_NAME = MAIN_LOCATION
 OUTPUT_FOLDER_NAME = OUTPUT
 
 # change here
-NAME_NUM = 3
-NAME_of_file = 3-binary_tree_delete.c
-OUTPUT_NAME = 3-del
+NAME_NUM = 4
+NAME_of_file = 4-binary_tree_is_leaf.c
+OUTPUT_NAME = 4-leaf
 # if there is more files for the compiler
 EXTRA = 0-binary_tree_node.c 2-binary_tree_insert_right.c 
 # --------------------------------
