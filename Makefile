@@ -58,7 +58,7 @@ T134_NAME = 134-heap_to_sorted_array.c
 
 
 # change here
-NAME_NUM = 8
+NAME_NUM = 9
 # 0 if you need the valgrind 1 if you dont need valgeind
 valgrind_need_it = 1
 # 0 if you want it to test the betty
