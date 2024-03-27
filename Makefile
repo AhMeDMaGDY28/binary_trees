@@ -9,11 +9,6 @@ MAIN_FOLDER_NAME = MAIN_LOCATION
 OUTPUT_FOLDER_NAME = OUTPUT
 #remember the out put every time gets deleted after using
 
-
-
-
-
-
 # dont touch this
 CC = gcc
 OUT_FLAG = -o
@@ -62,14 +57,19 @@ T134_NAME = 134-heap_to_sorted_array.c
 
 
 # change here
-NAME_NUM = 5
-NAME_of_file = $(T5_NAME)
+NAME_NUM = 2
+# 0 if you need the valgrind 1 if you dont need valgeind
 valgrind_need_it = 1
+#extra file which is needed for compile
 EXTRA = $(T0_NAME) $(T2_NAME)
+# if there more files for compile
+EXTRA1 = 
+
+
 # after changing dont touch anything down
 #------------------------
 
-EXTRA_FULL = $(EXTRA)
+EXTRA_FULL = $(EXTRA) $(EXTRA1)
 
 
 MAIN_FOLDER = $(MAIN_FOLDER_NAME)/
@@ -81,7 +81,7 @@ OUTPUT_NAME = test
 main_READY = $(MAIN_FOLDER)$(main_name)
 PRINT_READY = $(MAIN_FOLDER)$(PRINT_TREE)
 run_place = $(OUTPUT_FOLDER)$(OUTPUT_NAME)
-
+NAME_of_file = $(T$(NAME_NUM)_NAME)
 # ----------------------------------
 
 
