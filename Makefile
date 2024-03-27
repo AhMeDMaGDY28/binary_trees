@@ -1,4 +1,4 @@
-.PHONY: name_maker all copy need_maker make move clean run ram_checker clean2 betty
+.PHONY: all copy make move clean run ram_checker clean2 betty finished
 # this is a make file for 0x1D. C - Binary trees
 
 
@@ -56,10 +56,13 @@ T133_NAME = 133-heap_extract.c
 T134_NAME = 134-heap_to_sorted_array.c
 
 
+
 # change here
-NAME_NUM = 7
+NAME_NUM = 8
 # 0 if you need the valgrind 1 if you dont need valgeind
 valgrind_need_it = 1
+# 0 if you want it to test the betty
+betty_need_it = 0
 #extra file which is needed for compile
 EXTRA = $(T0_NAME) $(T2_NAME)
 # if there more files for compile
@@ -90,7 +93,7 @@ OUTPUT_NAME_FLAG = $(OUT_FLAG) $(OUTPUT_NAME)
 NEED = $(PRINT_TREE) $(main_name) $(NAME) $(EXTRA_FULL)
 OUTPUT_NAME = TEST
 #functions here
-all:  name_maker copy need_maker make move clean run ram_checker clean2 betty
+all: copy  make move clean run ram_checker clean2 betty finished
 
 make_folders:
 	@mkdir -p $(MAIN_FOLDER_NAME)
@@ -121,10 +124,14 @@ clean:
 # running the out put
 run:
 	@echo "------------------"
-	@echo "   RUNING TEST"
+	@echo "   RUNNING TEST"
 	@echo "------------------"
+	@echo "\n"
 	@./$(run_place)
-	@echo "------------------"
+	@echo "\n"
+	@echo "------------------------"
+	@echo "  RUNNING TEST FINISHED "
+	@echo "------------------------"
 	@echo "\n"
 
 ram_checker:
@@ -132,18 +139,32 @@ ifeq ($(valgrind_need_it),0)
 	@echo "------------------"
 	@echo " valgrind TEST"
 	@echo "------------------"
+	@echo "\n"
 	@valgrind ./$(run_place)
-	@echo "------------------"
+	@echo "\n"
+	@echo "------------------------"
+	@echo "  valgrind TEST FINISHED "
+	@echo "------------------------"
 	@echo "\n"
 endif
 clean2:
 	@rm -rf $(run_place)
 	@rm -rf *.o
 betty:
+ifeq ($(betty_need_it),0)
 	@echo "------------------"
 	@echo "  BETTY TEST"
 	@echo "------------------"
 	@betty $(NAME_of_file)
-	@echo "------------------"
 	@echo "\n"
-	@echo "finished all TESTS PERFECTLY"
+	@echo "\n"
+	@echo "------------------------"
+	@echo "  BETTY TEST FINISHED "
+	@echo "------------------------"
+	@echo "\n"
+endif
+
+finished:
+	@echo "--------------------------------"
+	@echo "  finished all TESTS PERFECTLY "
+	@echo "--------------------------------"
