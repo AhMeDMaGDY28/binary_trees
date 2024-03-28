@@ -8,8 +8,6 @@
  * the tree is NULL or if the node is the root of the tree, the depth is 0.
  * If the node is NULL, the function returns 0.
  *
- * @tree: A pointer to the node to measure the depth of.
- *
  * Return: The depth of the node. If the node is NULL or if the tree is NULL,
  *         the function returns 0.
  *
