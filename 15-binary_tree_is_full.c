@@ -10,7 +10,7 @@
  *
  * Return: 1 if the binary tree is full, 0 otherwise.
  *
- * Author: AhMeDMaGDY28
+ * Author: AhMeDMaGDY28 & karxg
  * School: ALX CO 1 BLENDED
  */
 int binary_tree_is_full(const binary_tree_t *tree)
