@@ -11,8 +11,6 @@
  * The height of a binary tree with more than two children is determined by the
  * longest path from the root node to a leaf node.
  *
- * @tree: A pointer to the root node of the tree to measure.
- *
  * Return: The height of the binary tree. If the tree is NULL, the function
  *         returns 0.
  *
