@@ -58,7 +58,7 @@ T134_NAME = 134-heap_to_sorted_array.c
 
 
 # change here
-NAME_NUM = 13
+NAME_NUM = 14
 # 0 if you need the valgrind 1 if you dont need valgeind
 valgrind_need_it = 1
 # 0 if you want it to test the betty
@@ -66,7 +66,7 @@ betty_need_it = 0
 #extra file which is needed for compile
 EXTRA = $(T0_NAME) $(T2_NAME)
 # if there more files for compile
-EXTRA1 = 
+EXTRA1 = $(T1_NAME)
 
 
 # after changing dont touch anything down
