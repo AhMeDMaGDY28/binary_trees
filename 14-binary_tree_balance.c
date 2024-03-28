@@ -15,7 +15,7 @@
  * Return: The balance factor of the binary tree. If the tree is NULL,
  *         the function returns 0.
  *
- * Author: AhMeDMaGDY28
+ * Author: AhMeDMaGDY28 & karxg
  * School: ALX CO 1 BLENDED
  */
 int binary_tree_balance(const binary_tree_t *tree)
@@ -48,7 +48,7 @@ int binary_tree_balance(const binary_tree_t *tree)
  * Return: The height of the binary tree. If the tree is NULL, the function
  *         returns 0.
  *
- * Author: AhMeDMaGDY28
+ * Author: AhMeDMaGDY28 & karxg
  * School: ALX CO 1 BLENDED
  */
 size_t binary_tree_height(const binary_tree_t *tree)
